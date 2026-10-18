@@ -1,0 +1,6 @@
+{
+  "name": "DayFlow — Intelligent Daily Planner",
+  "description": "A calm, intelligent personal scheduling and productivity management dashboard that dynamically balances deep work, fixed commitments, and protected recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
