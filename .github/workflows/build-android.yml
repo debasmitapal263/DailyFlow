@@ -18,9 +18,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Use stable npm version
+        run: npm install -g npm@10
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
 
       - name: Build web app
         run: npm run build
