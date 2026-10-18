@@ -39,8 +39,26 @@ jobs:
       - name: Accept Android SDK licenses
         run: yes | sdkmanager --licenses
 
+      
+      - name: Install Capacitor
+        run: npx --yes npm@10.8.2 install @capacitor/core @capacitor/android @capacitor/cli --legacy-peer-deps --no-audit --no-fund
+
+      - name: Configure Capacitor
+        run: |
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.debasmitapal.dailyflow",
+            "appName": "DayFlow",
+            "webDir": "dist"
+          }
+          EOF
+
+      - name: Add Android platform
+        run: npx cap add android
+
       - name: Sync Capacitor Android
         run: npx cap sync android
+
 
       - name: Build debug APK
         working-directory: android
